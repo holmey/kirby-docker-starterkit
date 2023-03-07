@@ -4,6 +4,8 @@ WORKDIR /var/www/html
 
 ARG TIME_ZONE=Europe/Berlin
 
+ENV XDEBUG_MODE=off
+
 # Install build dependencies
 RUN apk add --update --no-cache \
   freetype-dev \

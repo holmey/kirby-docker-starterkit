@@ -14,7 +14,8 @@ $ cd kirby-docker-starterkit
 $ docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
 $ docker compose exec -it php composer install
 ```
-Visit the [admin panel](http://localhost/panel) and finalize the installation .
+
+Visit the [admin panel](http://localhost/panel) and finalize the installation.
 
 ## Using Apache instead of NGINX
 
@@ -27,7 +28,8 @@ $ cd kirby-docker-starterkit
 $ docker compose -f docker-compose.yml -f docker-compose.httpd.yml up -d
 $ docker compose exec -it php composer install
 ```
-Visit the [admin panel](http://localhost/panel) and finalize the installation .
+
+Visit the [admin panel](http://localhost/panel) and finalize the installation.
 
 ## Configure Timezone
 
@@ -47,7 +49,13 @@ There is a handy [MailHog](https://github.com/mailhog/MailHog) service running a
 
 ## Xdebug
 
-The PHP Service is configured with Xdebug. If you are working with Visual Studio Code you could use the following launch.json configuration.
+The PHP Service is configured with Xdebug. You can change the needed [XDEBUG_MODE](https://xdebug.org/docs/all_settings#mode) via environment variable when starting the setup.
+
+```bash
+$ XDEBUG_MODE=debug docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
+```
+
+If you are working with Visual Studio Code you could use the following launch.json configuration.
 
 ```bash
 {
