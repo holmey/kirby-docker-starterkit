@@ -1,0 +1,14 @@
+version: "3"
+services:
+  httpd:
+    build:
+      context: "./docker/httpd/"
+    container_name: kirby-httpd
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html/:ro
+    networks:
+      - kirby

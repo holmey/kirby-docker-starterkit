@@ -1,0 +1,14 @@
+version: "3"
+services:
+  nginx:
+    image: nginx:alpine
+    container_name: kirby-nginx
+    volumes:
+      - ./:/var/www/html/:ro
+      - ./docker/nginx/conf.d:/etc/nginx/conf.d:ro
+    depends_on:
+      - php
+    ports:
+      - "80:80"
+    networks:
+      - kirby

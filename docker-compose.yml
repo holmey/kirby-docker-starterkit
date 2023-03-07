@@ -1,0 +1,25 @@
+version: "3"
+services:
+  php:
+    build:
+      context: ./docker/php
+      args:
+        TIME_ZONE: "Europe/Berlin"
+    container_name: kirby-php
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./:/var/www/html/
+    networks:
+      - kirby
+  mailhog:
+    image: mailhog/mailhog:latest
+    container_name: kirby-mailhog
+    ports:
+      - 1025:1025
+      - 8025:8025
+    networks:
+      - kirby
+networks:
+  kirby:
+    driver: bridge
