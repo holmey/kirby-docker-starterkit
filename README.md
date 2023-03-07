@@ -14,6 +14,7 @@ $ cd kirby-docker-starterkit
 $ docker compose -f docker-compose.yml -f docker-compose.nginx.yml up -d
 $ docker compose exec -it php composer install
 ```
+Visit the [admin panel](http://localhost/panel) and finalize the installation .
 
 ## Using Apache instead of NGINX
 
@@ -26,6 +27,7 @@ $ cd kirby-docker-starterkit
 $ docker compose -f docker-compose.yml -f docker-compose.httpd.yml up -d
 $ docker compose exec -it php composer install
 ```
+Visit the [admin panel](http://localhost/panel) and finalize the installation .
 
 ## Configure Timezone
 
